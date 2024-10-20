@@ -1,0 +1,13 @@
+﻿.botton-direccion5 {
+    background-color: #00000000;
+    border: none;
+    color: black;
+    padding: 60px 333px;
+    text-decoration: none;
+    font-size: 2.4rem;
+    border-radius: 12px;
+    font-family: sans serif;
+    position: absolute; /* Permite mover el botón */
+    top: 840px; /* Posición vertical (y) */
+    left: 940px; /* Posición horizontal (x) */
+}

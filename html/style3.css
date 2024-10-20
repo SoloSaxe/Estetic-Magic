@@ -1,0 +1,13 @@
+﻿.botton-direccion4 {
+    background-color: #00000000;
+    border: none;
+    color: black;
+    padding: 200px 133px;
+    text-decoration: none;
+    font-size: 2.4rem;
+    border-radius: 12px;
+    font-family: sans serif;
+    position: absolute; /* Permite mover el botón */
+    top: 160px; /* Posición vertical (y) */
+    left: 1340px; /* Posición horizontal (x) */
+}

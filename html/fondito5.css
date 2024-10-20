@@ -1,0 +1,8 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background: url(pag5.png);
+    background-size: cover;
+    background-position: 0px -50px; /* Modifica la posición x e y aquí */
+    font-family: sans-serif;
+}
