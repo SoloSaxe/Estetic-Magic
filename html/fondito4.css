@@ -1,8 +1,12 @@
 ﻿body {
     margin: 0;
     padding: 0;
-    background: url(pag4.png);
-    background-size: cover;
-    background-position: 0px -50px; /* Modifica la posición x e y aquí */
+    background: url(pag4.png) no-repeat center center;
+    background-size: contain; /* Asegura que la imagen se muestre completamente */
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
     font-family: sans-serif;
+}
+
+.content {
+    min-height: 100vh; /* O cualquier altura que desees para el contenido */
 }

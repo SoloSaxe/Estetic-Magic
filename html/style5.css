@@ -2,12 +2,12 @@
     background-color: #00000000;
     border: none;
     color: black;
-    padding: 60px 53px;
+    padding: 40px 53px;
     text-decoration: none;
     font-size: 2.4rem;
     border-radius: 12px;
     font-family: sans serif;
     position: absolute; /* Permite mover el botón */
     top: -40px; /* Posición vertical (y) */
-    left: 1700px; /* Posición horizontal (x) */
+    left: 990px; /* Posición horizontal (x) */
 }
