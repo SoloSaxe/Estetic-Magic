@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Pedido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #00dbc9, #d4a552);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 900px;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            background-color: #ffeea1;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .product-image {
+            margin: 20px 0;
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+            border-radius: 10px;
+            background-image: url('shorts-hombre.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .order-info {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .button {
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+        }
+        .button:nth-child(1) { background-color: #f6aa1c; }
+        .button:nth-child(2) { background-color: #4ac4f3; }
+        .button:nth-child(3) { background-color: #f09e6c; }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+            position: relative;
+        }
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 4px;
+            background-color: #333;
+            z-index: 0;
+        }
+        .timeline div {
+            text-align: center;
+            font-size: 0.9em;
+            position: relative;
+            z-index: 1;
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .icon {
+            font-size: 6em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #666;
+        }
+        
+        /* Flecha de regreso */
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: #333;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+        .back-arrow:hover {
+            transform: scale(1.1);
+        }
+
+        /* Mensaje de anulación de compra */
+        #cancelMessage {
+            display: none;
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #cancelMessage.show {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Estilos para los formularios */
+        #opinionForm, #inconvenienteForm {
+            display: none;
+            margin-top: 20px;
+        }
+        #opinionMessage, #inconvenienteMessage {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Flecha de regreso -->
+    <a href="categoria.html" class="back-arrow">←</a>
+
+    <div class="container">
+        <div class="header">
+            <span>sigue tu pedido</span>
+            <span>fecha de compra: 19-10-2024 14:14 &nbsp;&nbsp; precio producto: $9.852</span>
+        </div>
+
+        <div class="product-image"></div>
+
+        <div class="order-info">
+            N°de compra: 222456789 <br>
+            cantidad: 1
+        </div>
+
+        <div class="buttons">
+            <div class="button" onclick="cancelOrder()">anular compra</div>
+            <div class="button" onclick="showOpinionForm()">escribir opinion</div>
+            <div class="button" onclick="showInconvenienteForm()">reportar inconveniente</div>
+        </div>
+
+        <!-- Mensaje de anulación de compra -->
+        <p id="cancelMessage">Usted ha anulado su compra</p>
+
+        <div class="timeline">
+            <div>
+                <div class="icon">📱</div>
+                pedido procesado <br> 20-10-2024 14:14
+            </div>
+            <div>
+                <div class="icon">📦</div>
+                preparando producto <br> 21-10-2024 13:14
+            </div>
+            <div>
+                <div class="icon">📦</div>
+                listo para despachar <br> 24-10-2024 11:12
+            </div>
+            <div>
+                <div class="icon">🚚</div>
+                envío en tránsito <br> 25-10-2024 11:12
+            </div>
+            <div>
+                <div class="icon">🏠</div>
+                entrega a domicilio
+            </div>
+        </div>
+
+        <!-- Formulario de opinión -->
+        <div id="opinionForm">
+            <textarea id="opinionText" rows="4" cols="50" placeholder="Escribe tu opinión aquí..."></textarea><br>
+            <button onclick="submitOpinion()">Enviar</button>
+            <p id="opinionMessage"></p>
+        </div>
+
+        <!-- Formulario de inconveniente -->
+        <div id="inconvenienteForm">
+            <textarea id="inconvenienteText" rows="4" cols="50" placeholder="Describe el inconveniente aquí..."></textarea><br>
+            <button onclick="submitInconveniente()">Enviar</button>
+            <p id="inconvenienteMessage"></p>
+        </div>
+
+        <div class="footer">
+            fecha de entrega: 31 de agosto <br>
+            2023 - Estetic Magic - Política de Privacidad
+        </div>
+    </div>
+
+    <script>
+        function cancelOrder() {
+            const cancelMessage = document.getElementById("cancelMessage");
+            cancelMessage.classList.add("show");
+            setTimeout(() => {
+                cancelMessage.classList.remove("show");
+            }, 3000); // Ocultar mensaje después de 3 segundos
+        }
+
+        function showOpinionForm() {
+            document.getElementById("opinionForm").style.display = "block";
+            document.getElementById("inconvenienteForm").style.display = "none";
+        }
+
+        function submitOpinion() {
+            document.getElementById("opinionMessage").innerText = "Opinión enviada, gracias por preferir Estetic Magic";
+            document.getElementById("opinionText").value = "";
+            setTimeout(() => {
+                document.getElementById("opinionForm").style.display = "none";
+            }, 2000);
+        }
+
+        function showInconvenienteForm() {
+            document.getElementById("inconvenienteForm").style.display = "block";
+            document.getElementById("opinionForm").style.display = "none";
+        }
+
+        function submitInconveniente() {
+            document.getElementById("inconvenienteMessage").innerText = "Trabajaremos duro para solucionar su problema";
+            document.getElementById("inconvenienteText").value = "";
+            setTimeout(() => {
+                document.getElementById("inconvenienteForm").style.display = "none";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de Pago</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* Cambiado a columna para que el footer esté al final */
+            justify-content: space-between; /* Espacio entre el contenido y el footer */
+            align-items: center;
+            background: linear-gradient(to right, #00dbc9, #d4a552);
+            margin: 0;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            max-width: 900px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            flex-grow: 1; /* Permite que el contenedor crezca y ocupe espacio */
+            margin: 20px 0; /* Espacio superior e inferior para el contenedor */
+        }
+        .product-info {
+            width: 40%;
+            background: linear-gradient(to bottom, #00dbc9, #d4a552);
+            color: #000;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px 0 0 10px;
+        }
+        .product-info img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .product-info h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .product-info p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .product-info .price {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .payment-methods {
+            width: 60%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+            text-align: left;
+        }
+        .payment-methods h1 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .payment-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            font-weight: bold;
+        }
+        .payment-option img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.8em;
+            color: #666;
+            padding: 10px 0; /* Espaciado superior e inferior */
+            width: 100%; /* Asegura que el footer ocupe todo el ancho */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="product-info">
+            <h2>SHORT DE VERANO</h2>
+            <p>DESCUENTO 25% POR FESTIVIDAD</p>
+            <img src="shorts-hombre.png" alt="Short de Verano">
+            <div class="price">$9.852</div>
+            <p>PRECIO DE ENVÍO<br>$7.000</p>
+        </div>
+        
+        <div class="payment-methods">
+            <h1>métodos de pago</h1>
+            <div class="payment-option">
+                <img src="visa.png" alt="Visa"> TARJETAS DE CRÉDITO
+            </div>
+            <div class="payment-option">
+                <img src="paypal.png" alt="PayPal"> PAYPAL
+            </div>
+            <div class="payment-option">
+                <img src="otros.png" alt="Otros"> OTRO MÉTODO DE PAGO
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        2023 - Estetic Magic - Política de Privacidad
+    </div>
+</body>
+</html>

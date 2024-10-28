@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Estetic Magic</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #88e1f2, #ffdd70);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            transition: opacity 0.5s ease;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        form input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .login-btn {
+            background-color: #ffdd70;
+            border: none;
+            padding: 1rem;
+            color: #333;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .login-btn:hover {
+                background-color: #ffc107;
+            }
+
+        .contact-info {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+            .contact-info a {
+                color: #333;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+                .contact-info a:hover {
+                    text-decoration: underline;
+                }
+
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            color: #333;
+            text-decoration: none;
+        }
+
+            .back-arrow:hover {
+                color: #000;
+            }
+
+        .welcome-message {
+            display: none;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Enlace a la página estetic.html -->
+    <a href="estetic.html" class="back-arrow">←</a>
+    <div class="container" id="login-container">
+        <h1>Iniciar Sesión</h1>
+        <form id="login-form">
+            <input type="email" name="email" placeholder="Escribe tu e-mail" required>
+            <input type="password" name="password" placeholder="Escribe tu contraseña" required>
+            <button type="submit" class="login-btn">INICIAR SESIÓN</button>
+        </form>
+        <div class="welcome-message" id="welcome-message">Bienvenido de vuelta</div>
+        <div class="contact-info">
+            <p>Utiliza las siguientes vías de contacto:</p>
+            <p>Vía E-mail: <a href="mailto:estetic@magic.com">estetic@magic.com</a></p>
+            <p>En nuestras redes sociales: <a href="https://twitter.com/esteticmagic" target="_blank">@esteticmagic</a></p>
+            <p>Por teléfono: <a href="tel:911234567">91-1234-567</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe inmediatamente
+            const container = document.getElementById('login-container');
+            const welcomeMessage = document.getElementById('welcome-message');
+
+            // Disminuye la opacidad del formulario
+            container.style.opacity = '0';
+
+            // Muestra el mensaje de bienvenida
+            welcomeMessage.style.display = 'block';
+
+            // Redirige a categoria.html después de un breve retraso
+            setTimeout(function() {
+                window.location.href = 'categoria.html';
+            }, 2000); // 2 segundos de retraso
+        });
+    </script>
+</body>
+</html>

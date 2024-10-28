@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estetic Magic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #00c2c7, #f5a623);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #F5A623;
+            padding: 15px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        header .cart {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart img {
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            width: 100%; /* Ancho total del contenedor */
+            max-width: 1000px; /* Ajustar el ancho máximo del marco */
+            margin: 20px auto; /* Centrando el marco */
+        }
+
+        .product-image img {
+            max-width: 800px; /* Imagen al doble de tamaño */
+            border-radius: 8px;
+        }
+
+        .product-details {
+            flex-grow: 1;
+            margin-left: 50px; /* Aumentar el margen para más espacio */
+        }
+
+        .product-details h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .product-details .price {
+            font-size: 36px;
+            color: red;
+        }
+
+        .product-details .price-original {
+            text-decoration: line-through;
+            color: gray;
+            margin-left: 10px;
+            font-size: 22px;
+        }
+
+        .rating {
+            margin: 20px 0;
+        }
+
+        .rating span {
+            font-size: 20px;
+            color: gold;
+        }
+
+        .rating a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        .colors, .sizes {
+            margin: 20px 0;
+        }
+
+        .colors span, .sizes span {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .colors div {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+        }
+
+        .color-beige {
+            background-color: #d4c0a1;
+        }
+
+        .color-brown {
+            background-color: #a5754a;
+        }
+
+        .color-black {
+            background-color: #000000;
+        }
+
+        .sizes button {
+            padding: 10px 15px;
+            margin-right: 15px;
+            border: 1px solid #ccc;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .add-to-cart {
+            background-color: #00c2c7;
+            color: white;
+            padding: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center; /* Centrar el texto */
+            display: inline-block; /* Para que se comporte como un botón */
+        }
+
+        footer {
+            background-color: #F5A623;
+            text-align: center;
+            padding: 15px 0;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>ESTETIC MAGIC</h1>
+        </div>
+        <nav>
+            <a href="#">INICIO</a>
+            <a href="#">NOVEDADES</a>
+            <a href="#">OFERTAS</a>
+            <a href="#">HOMBRE</a>
+            <a href="#">NIÑOS</a>
+            <a href="#">MUJER</a>
+            <a href="#">SEGUIMIENTO DE PEDIDO</a>
+        </nav>
+        <div class="cart">
+            <img src="cart-icon.png" alt="Carrito">
+            <span>1</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="product-container">
+            <div class="product-image">
+                <img src="shorts-hombre.png" alt="Shorts">
+            </div>
+            <div class="product-details">
+                <h1>Shorts casuales de verano para hombre con cintura ajustable y pierna ancha con impresión de letras</h1>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐☆</span> <a href="#">(100 + comentarios)</a>
+                </div>
+                <div class="price-container">
+                    <span class="price">$9.852</span>
+                    <span class="price-original">15.990</span>
+                </div>
+
+                <div class="colors">
+                    <span>COLOR</span>
+                    <div class="color-beige"></div>
+                    <div class="color-brown"></div>
+                    <div class="color-black"></div>
+                </div>
+
+                <div class="sizes">
+                    <span>TALLA</span>
+                    <button>S</button>
+                    <button>M</button>
+                    <button>L</button>
+                    <button>XL</button>
+                </div>
+
+                <a href="metodos.html" class="add-to-cart">AÑADIR AL CARRITO</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>2023 - Estetic Magic - Política de Privacidad</p>
+    </footer>
+</body>
+</html>

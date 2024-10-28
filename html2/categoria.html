@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estetic Magic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #00c3ff, #ffff1c);
+        }
+
+        header {
+            background-color: #00c3ff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            header h1 {
+                margin: 0;
+            }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+            nav a {
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+            }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+            .search-bar input[type="text"] {
+                padding: 5px;
+            }
+
+        .cart-icon {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+            .cart-icon img {
+                width: 60px; /* Cambiado a 60px */
+                height: 60px; /* Cambiado a 60px */
+            }
+
+        .categories {
+            position: absolute;
+            right: 0;
+            top: 150px;
+            background-color: #ffcc00;
+            padding: 15px;
+        }
+
+            .categories h3 {
+                text-align: center;
+            }
+
+            .categories ul {
+                list-style: none;
+                padding: 0;
+            }
+
+                .categories ul li {
+                    margin: 10px 0;
+                }
+
+                    .categories ul li img {
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 50%;
+                    }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-item {
+            background: radial-gradient(circle, #6cd9c9 30%, #ccb02d 90%);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+            .product-item img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+        .product-info {
+            margin-top: 10px;
+        }
+
+        .price {
+            color: red;
+            font-weight: bold;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .brands {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+            .brands img {
+                width: 100px;
+                height: auto;
+            }
+
+                .brands img[src="stoked.png"],
+                .brands img[src="kipling.png"],
+                .brands img[src="old-navy.png"],
+                .brands img[src="krul.png"] {
+                    width: 200px;
+                }
+
+        .footer {
+            background-color: #ffcc00;
+            padding: 15px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        * {
+            animation: slideInFromLeft 1s ease-out forwards; /* Animación para todos los elementos */
+            opacity: 0; /* Empiezan invisibles */
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%); /* Empieza fuera de la pantalla por la izquierda */
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0); /* Termina en su posición original */
+                opacity: 1;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <h1>ESTETIC MAGIC</h1>
+        <nav>
+            <a href="estetic.html">INICIO</a>
+            <a href="#">NOVEDADES</a>
+            <a href="#">OFERTAS</a>
+            <a href="#">HOMBRE</a>
+            <a href="#">NIÑOS</a>
+            <a href="#">MUJER</a>
+            <a href="seguimiento.html">SEGUIMIENTO DE PEDIDO</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+            <img src="search-icon.png" alt="Search">
+        </div>
+        <div class="cart-icon">
+            <img src="cart-icon.png" alt="Cart">
+            <img src="headphone-icon.png" alt="Support">
+        </div>
+    </header>
+
+    <div class="product-grid">
+        <div class="product-item">
+            <img src="polera-mujer.png" alt="Polera Cuello Redondo Mujer">
+            <div class="product-info">
+                <p>Polera Cuello Redondo Manga Corta Mujer</p>
+                <p class="price">$15.000 <span class="old-price">$45.000</span></p>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="poleron-hombre.png" alt="Polerón Stoked Skull Hombre">
+            <div class="product-info">
+                <p>Polerón Stoked Skull Hombre Café</p>
+                <p class="price">$34.990 <span class="old-price">$44.990</span></p>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="camisa-nino.png" alt="Camisa Manga Larga Niño Blanca">
+            <div class="product-info">
+                <p>Camisa Manga Larga Niño Blanca</p>
+                <p class="price">$17.490 <span class="old-price">$34.990</span></p>
+            </div>
+        </div>
+        <div class="product-item">
+            <a href="agregar.html">
+                <img src="shorts-hombre.png" alt="Shorts Verano Hombre">
+            </a>
+            <div class="product-info">
+                <p>Shorts de Verano para Hombre</p>
+                <p class="price">$9.852 <span class="old-price">$15.990</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="brands">
+        <img src="gap.png" alt="GAP">
+        <img src="marmot.png" alt="Marmot">
+        <img src="dc.png" alt="DC">
+        <img src="old-navy.png" alt="Old Navy">
+        <img src="krul.png" alt="Krul">
+        <img src="stoked.png" alt="Stoked">
+        <img src="kipling.png" alt="Kipling">
+    </div>
+
+    <div class="footer">
+        <p>Cambios y Devoluciones | Envío Gratis a Domicilio sobre $70.000 | Retira en Tienda Sin Costo</p>
+    </div>
+
+    <div class="categories">
+        <h3>Categorías</h3>
+        <ul>
+            <li><img src="verano.png" alt="Verano">Verano</li>
+            <li><img src="invierno.png" alt="Invierno">Invierno</li>
+            <li><img src="primavera.png" alt="Primavera">Primavera</li>
+            <li><img src="otonio.png" alt="Otoño">Otoño</li>
+        </ul>
+    </div>
+
+</body>
+</html>

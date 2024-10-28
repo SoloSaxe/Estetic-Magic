@@ -1,0 +1,18 @@
+﻿/* Agregamos una clase general para aplicar la animación a todos los elementos */
+* {
+    animation: slideInFromLeft 1s ease-out forwards; /* Animación para todos los elementos */
+    opacity: 0; /* Empiezan invisibles */
+}
+
+/* Definimos la animación */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%); /* Empieza fuera de la pantalla por la izquierda */
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0); /* Termina en su posición original */
+        opacity: 1;
+    }
+}

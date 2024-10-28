@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estetic Magic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #5de1e4, #e3a608);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            position: relative;
+        }
+
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated {
+            opacity: 0;
+            animation: slideDown 1s ease-out forwards;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            animation-delay: 0.5s;
+        }
+
+            .header img {
+                height: 120px;
+                width: auto;
+            }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+            .nav-links a {
+                margin: 0 15px;
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+            }
+
+        .search-box {
+            border: 2px solid black;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .auth-links {
+            display: flex;
+            align-items: center;
+        }
+
+            .auth-links a {
+                margin-left: 20px;
+                text-decoration: none;
+                font-weight: bold;
+                color: black;
+            }
+
+        .register-btn {
+            background-color: #f7ff00;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+            .register-btn:hover {
+                background-color: #e0e600;
+            }
+
+        .main-content {
+            position: absolute;
+            top: 200px;
+            left: 100px;
+            animation-delay: 1s;
+        }
+
+            .main-content h1 {
+                font-size: 64px;
+                font-weight: bold;
+                margin: 0;
+            }
+
+            .main-content h2 {
+                font-size: 24px;
+                margin: 10px 0 20px;
+                font-weight: normal;
+            }
+
+        .discover-btn {
+            background-color: #f7ff00;
+            color: black;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 25px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+            .discover-btn:hover {
+                background-color: #e0e600;
+            }
+
+        .sweater-img {
+            position: absolute;
+            top: 180px;
+            right: 100px;
+            height: 700px;
+            animation-delay: 1.5s;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            animation-delay: 2s;
+        }
+
+        .header, .main-content, .sweater-img, footer {
+            opacity: 0;
+            animation: slideDown 1.5s ease forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header animated">
+        <img src="sweater.png" alt="Logo Estetic Magic">
+        <div class="nav-links">
+            <a href="estetic.html">INICIO</a> <!-- Redirección al hacer clic -->
+            <a href="#">CATEGORÍAS</a>
+            <a href="#">CONTACTO</a>
+            <input class="search-box" type="text" placeholder="Buscar...">
+        </div>
+        <div class="auth-links">
+            <a href="inicio.html">INICIAR SESIÓN</a> <!-- Redirección al hacer clic -->
+            <a href="estetic2.html" class="register-btn">REGISTRO</a> <!-- Redirección al hacer clic -->
+        </div>
+    </div>
+
+    <div class="main-content animated">
+        <h2>A TU ALCANCE</h2>
+        <h1>ESTETIC MAGIC</h1>
+        <h2>EN DÍAS FRÍOS O CÁLIDOS, ESTETIC MAGIC TE ACOMPAÑARÁ</h2>
+        <a href="estetic2.html" class="discover-btn">DESCÚBRELO</a> <!-- Redirección al hacer clic -->
+    </div>
+
+    <img class="sweater-img animated" src="sweater.png" alt="Suéter Estetic Magic">
+
+    <footer class="animated">
+        2023 - Estetic Magic - Política de Privacidad
+    </footer>
+
+</body>
+</html>
